@@ -16,7 +16,7 @@ from sympy.logic.boolalg import true
 
 # sympy.printing imports
 from sympy.printing.precedence import precedence_traditional
-from theoris.third_party.sympy.printer import Printer, print_function
+from theoris.utils.sympy.printer import Printer, print_function
 
 # from sympy.printing.printer import Printer, print_function
 from sympy.printing.conventions import split_super_sub, requires_partial

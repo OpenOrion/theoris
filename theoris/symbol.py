@@ -4,7 +4,7 @@ from pint import Quantity
 from theoris.utils.units import ureg
 from theoris.section import Section
 from theoris.base_symbol import BaseSymbol, SymbolCodeCtx
-from theoris.third_party.sympy import LatexPrinter
+from theoris.utils.sympy import LatexPrinter
 from sympy.printing.numpy import NumPyPrinter
 from theoris.utils.logging import logger
 from theoris.utils.ordered_set import OrderedSet

@@ -1,5 +1,5 @@
 from pint import Quantity
-from theoris.third_party.sympy import LatexPrinter
+from theoris.utils.sympy import LatexPrinter
 from theoris.symbol import Symbol, Section
 from sympy import Matrix
 
