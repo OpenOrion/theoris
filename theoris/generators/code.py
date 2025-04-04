@@ -61,22 +61,16 @@ class CodeGenerator:
         )
 
     def get_class_attribute_str(self, attribute: BaseSymbol):
-        type_str = "int" if attribute.num_type == "int" else "float"
+        type_str = attribute.type_hint
         # Include unit information in the description
         description = f"{attribute.description} ({attribute.units_str})"
         return f"{attribute.name}: {type_str} = Field(description=\"{description}\")"
 
-    def get_class_attributes_str(self, args: list[BaseSymbol]):
-        return ("\n" + self.indent).join([
-            self.get_class_attribute_str(arg)
-            for arg in args
-        ])
 
     def get_parameter_str(self, parameter: BaseSymbol):
         return (
             "{name}: {_type}"
-            .format(name=parameter.name,
-                    _type="int" if parameter.num_type == "int" else "float")
+            .format(name=parameter.name, _type=parameter.type_hint)
         )
 
     def get_units_param_str(self, returns: BaseSymbol):
@@ -266,6 +260,7 @@ class CodeGenerator:
         import_strings = [
             "import numpy as np",  # TODO: make this dynamically added
             "from theoris.utils.units import ureg, validate_units",
+            "from pint import Quantity",
             "from pydantic import BaseModel, Field",
         ] + list(documentation.external_modules)
 

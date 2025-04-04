@@ -1,5 +1,7 @@
 # %% Imports
+from pathlib import Path
 from sympy import solve
+from theoris.generators.code import CodeGenerator
 from theoris.utils.units import ureg
 from theoris import Section, Symbol, ExternalFunctionSymbol,  Documentation
 
@@ -222,3 +224,12 @@ documentation = Documentation(
         ),
     ]
 )
+# %%
+# Generate code
+output_dir = Path("out")
+output_dir.mkdir(exist_ok=True)
+
+print("\nGenerating code...")
+cgen = CodeGenerator(output_dir)
+cgen.generate_code(documentation)
+# %%

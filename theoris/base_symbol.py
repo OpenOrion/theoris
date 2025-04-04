@@ -113,6 +113,10 @@ class BaseSymbol(sympy.Symbol, DocObject):
             logger.warning(
                 f"{self.name} has has_forced_unit_conversion which is not advised for safety")
 
+    @property
+    def type_hint(self) -> str:
+        return "int" if self.num_type == "int" else "float"
+
     def set_section(self, section):
         """
         Set the Section this symbol belongs to.

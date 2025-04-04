@@ -15,7 +15,7 @@ if Path('requirements.txt').exists():
 
 setup(
     name='theoris',
-    version='0.4.0',
+    version='0.5.0',
     packages=find_packages(),
     install_requires=requirements,
     url='https://github.com/OpenOrion/theoris',

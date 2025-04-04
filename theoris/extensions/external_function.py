@@ -22,11 +22,12 @@ class ExternalFunctionSymbol(BaseSymbol):
                  name: str,
                  description: str = None,
                  latex: str = None,
-                 units: Quantity = None
+                 units: Quantity = None,
+                 num_type: str = "real",
                  ) -> None:
         super().__init__(name=name,
                          section=None,
-                         num_type="Callable",
+                         num_type=num_type,
                          description=description,
                          latex=latex if latex is not None else name,
                          units=units)
@@ -38,11 +39,11 @@ class ExternalFunctionSymbol(BaseSymbol):
     def is_assigned(self) -> bool:
         return True
 
-    def initialize(self):
-        if self.section:
-            callable_arg_types = ",".join(
+    @property
+    def type_hint(self) -> str:
+        callable_arg_types = ",".join(
                 ['Quantity']*len(self.section.args))
-            self.num_type = f"Callable[[{callable_arg_types}], Quantity]"
+        return f"Callable[[{callable_arg_types}], Quantity]"
 
 
 class ExternalFunctionCallerSymbol(BaseSymbol):
