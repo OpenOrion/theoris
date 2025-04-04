@@ -43,7 +43,8 @@ print("\n" + proof_section.get_proof_summary())
 # Example of using ProofSymbol directly
 x_symbol = Symbol(
     "x",
-    description="A variable"
+    expression=5,  # Assign a concrete value that satisfies the constraints
+    description="A variable with value 5"
 )
 
 # Add constraints to the symbol

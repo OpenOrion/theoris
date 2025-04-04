@@ -1,5 +1,3 @@
-import logging
-from mpmath.functions.functions import sec
 from theoris.utils.ordered_set import OrderedSet
 import sympy
 from theoris import BaseSymbol, SymbolCodeCtx, Section

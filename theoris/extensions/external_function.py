@@ -1,11 +1,8 @@
-import logging
 from pint import Quantity
 from theoris.utils.ordered_set import OrderedSet
 import sympy
-from theoris import BaseSymbol, SymbolCodeCtx, Section
+from theoris import BaseSymbol, SymbolCodeCtx
 from theoris.section import SymbolMapping
-from theoris.symbol import Symbol
-from theoris.utils.symbols import get_code_name
 from theoris.utils.ordered_set import OrderedSet
 from theoris.utils.logging import logger
 import uuid

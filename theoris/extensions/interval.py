@@ -1,10 +1,7 @@
 import uuid
-from typing import Union
 import sympy
 from pint import Quantity
 from theoris import BaseSymbol, SymbolCodeCtx, Section
-from theoris.section import SymbolMapping
-from theoris.utils.symbols import get_code_name
 from theoris.utils.ordered_set import OrderedSet
 
 
